@@ -11,25 +11,40 @@ tokens = (
     'TYPE',
     'NUMBER',
     'SEMICOLON',
-    'keytype',
-    'KEY'
+    'PRIMARY',
+    'FOREIGN',
+    'KEY',
+    'NULL',
+    'DATE',
+    'CHECK',
+    'GREATER',
+    'EQUAL',
+    'DEFAULT',
+    'REFERENCES',
+    'ON',
+    'DELETE',
+    'SET',
+    'CASCADE',
+    'UNIQUE',
+    'IN',
+    'UPDATE',
+    'TIME'
 )
 
+
 # Regular expression rules for simple tokens
-t_CREATE = r'CREATE'
-t_TABLE = r'TABLE'
 t_LPAREN = r'\('
 t_RPAREN = r'\)'
 t_COMMA = r','
 t_ignore = ' \t\n'
 t_SEMICOLON = r';'
-t_keytype = r'FOREIGN+PRIMARY'
-t_KEY = r'KEY'
 
 
-# Define a rule for data types (for simplicity, just identifying them as TYPE tokens)
+
+
 def t_TYPE(t):
-    r'INT|VARCHAR|TEXT|FLOAT|DATE|TIME|BOOLEAN|NUMBER'
+    r"""INT|VARCHAR|TEXT|FLOAT|DATE|TIME|BOOLEAN|NUMBER|BIT|SMALLINT|INT|BIGINT|REAL|FLOAT|DECIMAL|CHAR|NCHAR|NVARCHAR
+    |TEXT|BINARY"""
     return t
 
 
@@ -48,14 +63,10 @@ def t_error(t):
 def t_ID(t):
     r'[a-zA-Z_][a-zA-Z0-9_]*'
     if t.value.upper() in tokens:
-        t.type = t.value.upper()  # Convert reserved words to uppercase
+        t.type = t.value.upper()
     return t
 
-# Build the lexer
 lexer = lex.lex()
-# Test the lexer
-
-
 data = ""
 while True:
     x = input()
