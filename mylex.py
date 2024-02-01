@@ -42,6 +42,7 @@ t_SEMICOLON = r';'
 
 
 
+
 def t_TYPE(t):
     r"""INT|VARCHAR|TEXT|FLOAT|DATE|TIME|BOOLEAN|NUMBER|BIT|SMALLINT|INT|BIGINT|REAL|FLOAT|DECIMAL|CHAR|NCHAR|NVARCHAR
     |TEXT|BINARY"""
@@ -80,3 +81,7 @@ while True:
     if not tok:
         break  # No more input
     print(tok)
+
+
+
+
