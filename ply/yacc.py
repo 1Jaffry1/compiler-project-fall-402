@@ -2367,9 +2367,9 @@ def yacc(*, debug=yaccdebug, module=None, start=None,
         debuglog.info('')
         debuglog.info('Unused terminals:')
         debuglog.info('')
-        for term in unused_terminals:
-            errorlog.warning('Token %r defined, but not used', term)
-            debuglog.info('    %s', term)
+        # for term in unused_terminals:
+        #     errorlog.warning('Token %r defined, but not used', term)
+        #     debuglog.info('    %s', term)
 
     # Print out all productions to the debug log
     if debug:

@@ -2,5 +2,10 @@ CREATE TABLE Orders (
     order_id INT PRIMARY KEY,
     product_id INT,
     quantity INT,
-    FOREIGN KEY (455) REFERENCES Products(product_id)
+    FOREIGN KEY (product_id)
+    REFERENCES Products(product_id)
 );
+
+
+CREATE TABLE X ( Y INT ) );
+

@@ -44,7 +44,7 @@ t_SEMICOLON = r';'
 
 
 def t_TYPE(t):
-    r"""INT|VARCHAR|TEXT|FLOAT|DATE|TIME|BOOLEAN|NUMBER|BIT|SMALLINT|INT|BIGINT|REAL|FLOAT|DECIMAL|CHAR|NCHAR|NVARCHAR
+    r"""INT|VARCHAR(\(\d+\))?|TEXT|FLOAT|DATE|TIME|BOOLEAN|NUMBER|BIT|SMALLINT|INT|BIGINT|REAL|FLOAT|DECIMAL|CHAR|NCHAR|NVARCHAR
     |TEXT|BINARY"""
     return t
 
@@ -57,7 +57,7 @@ def t_NUMBER(t):
 
 # Error handling rule
 def t_error(t):
-    print("Illegal character '%s'" % t.value[0])
+    print(f"Illegal character '{t.value[0]}' at line {t.lineno}")
     t.lexer.skip(1)
 
 
@@ -68,19 +68,7 @@ def t_ID(t):
     return t
 
 lexer = lex.lex()
-data = ""
-while True:
-    x = input()
-    if x.__contains__(";"):
-        data += x
-        break
-    data += x
-lexer.input(data)
-while True:
-    tok = lexer.token()
-    if not tok:
-        break  # No more input
-    print(tok)
+
 
 
 
