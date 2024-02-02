@@ -31,18 +31,14 @@ tokens = (
     'TIME'
 )
 
-
 # Regular expression rules for simple tokens
 t_LPAREN = r'\('
 t_RPAREN = r'\)'
 t_COMMA = r','
-t_ignore = ' \t\n'
+t_ignore = ' \t'
 t_SEMICOLON = r';'
 
-
-
-
-
+line_number = 1
 def t_TYPE(t):
     r"""INT|VARCHAR(\(\d+\))?|TEXT|FLOAT|DATE|TIME|BOOLEAN|NUMBER|BIT|SMALLINT|INT|BIGINT|REAL|FLOAT|DECIMAL|CHAR|NCHAR|NVARCHAR
     |TEXT|BINARY"""
@@ -57,8 +53,14 @@ def t_NUMBER(t):
 
 # Error handling rule
 def t_error(t):
-    print(f"Illegal character '{t.value[0]}' at line {t.lineno}")
+    print(f"LEXICAL: Illegal character '{t.value[0]}' at line {t.lineno}")
     t.lexer.skip(1)
+
+
+def t_newline(t):
+    r'\n+'
+    global line_number
+    line_number += len(t.value)
 
 
 def t_ID(t):
@@ -67,9 +69,5 @@ def t_ID(t):
         t.type = t.value.upper()
     return t
 
+
 lexer = lex.lex()
-
-
-
-
-
