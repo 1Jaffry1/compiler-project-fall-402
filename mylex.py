@@ -39,7 +39,7 @@ t_COMMA = r','
 t_ignore = ' \t'
 t_SEMICOLON = r';'
 
-line_number = 0
+line_number = 1
 index = 0
 msg = ''
 

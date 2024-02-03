@@ -20,7 +20,7 @@ class GUI:
         photo = tk.Label(self.root, image=bg)
         photo.place(x=0, y=0)
 
-        self.label = tk.Label(self.root, text="Group: Jafari, Faghih Mousavi, Arabzadeh", font=("Arial", 18))
+        self.label = tk.Label(self.root,bg="#0A193E", fg="white" ,text="Group: Jafari, Faghih Mousavi, Arabzadeh", font=("Arial", 18))
         self.label.pack(pady=5)
 
         self.textbox = tk.Text(self.root, height=12,bg="#283747", fg="#FFFDD0" ,font=("Courier New", 20))
@@ -37,7 +37,13 @@ class GUI:
         self.root.mainloop()
         
     def run_code(self):
+        mylex.line_number = 1
+        mylex.index = 0
+        mylex.msg = ''
+        mysyn.msg = ''
         mysyn.parser.parse(self.data)
+        if mysyn.err_cnt ==0:
+            mysyn.msg = "Code parsed successfully!"
         messagebox.showinfo(message=mylex.msg+'\n'+mysyn.msg)
 
         
@@ -54,13 +60,3 @@ class GUI:
 
 
 app = GUI()
-# data = ""
-# while True:
-#     x = input()
-#     if x.endswith(';'):
-#         data += "\n"+x
-#         break
-#     else:
-#         data += "\n"+x
-# print(data)
-# mysyn.parser.parse(data)

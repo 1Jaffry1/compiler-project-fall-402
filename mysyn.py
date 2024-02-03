@@ -5,15 +5,17 @@ from tkinter import messagebox
 from mylex import tokens
 
 msg = ""
+err_cnt=0
 erline = -1
 erchar = -1
 
 
 def p_create_table(p):
-    '''create_table : CREATE TABLE ID LPAREN column_definitions RPAREN SEMICOLON'''
+    '''create_table : CREATE TABLE ID LPAREN column_definitions RPAREN SEMICOLON
+                    | create_table create_table'''
     # Process the CREATE TABLE command
-    global msg
-    msg = "Code parsed successfully!"
+
+
 
 
 def p_column_definitions(p):
@@ -46,9 +48,11 @@ def p_expression_group(t):
 
 
 def p_error(p):
-    global msg
+    global msg, err_cnt
     msg += f"\nSyntax error at token \"{p.value}\": line {mylex.line_number}, pos {p.lexpos - mylex.index}" + '\n'
+    err_cnt+=1
 
 
 
 parser = yacc.yacc(debug=True)
+
