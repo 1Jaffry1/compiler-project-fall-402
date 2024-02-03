@@ -17,7 +17,7 @@ class GUI:
         self.label = tk.Label(self.root, text="Group: Jafari, Faghih Mousavi, Arabzadeh", font=("Arial", 18))
         self.label.pack(pady=5)
 
-        self.textbox = tk.Text(self.root, height=12, fg="#FFFDD0" ,font=("Courier New", 20))
+        self.textbox = tk.Text(self.root, height=12,bg="black",fg="#FFFDD0" ,font=("Courier New", 20))
         self.textbox.pack(padx=10, pady=6)
 
         self.run_button = tk.Button(self.root, text="▶︎", bg="white", fg="dark green" ,font=("helvetica", 15), command=self.check_code)
