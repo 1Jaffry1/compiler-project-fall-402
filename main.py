@@ -1,4 +1,3 @@
-# import mysyn
 import tkinter as tk
 from tkinter import messagebox
 import mysyn
@@ -11,29 +10,31 @@ class GUI:
         self.root = tk.Tk()
         self.root.title("SQL Create Compiler")
         self.root.geometry("800x500")
+        bg = tk.PhotoImage(file="bg_image.png")
+        photo = tk.Label(self.root, image=bg)
+        photo.place(x=0, y=0)
 
         self.label = tk.Label(self.root, text="Group: Jafari, Faghih Mousavi, Arabzadeh", font=("Arial", 18))
         self.label.pack(pady=5)
 
-        self.tb = tk.Text(self.root, height=12, font=("Courier New", 20))
-        self.tb.pack(padx=10, pady=6)
+        self.textbox = tk.Text(self.root, height=12, fg="#FFFDD0" ,font=("Courier New", 20))
+        self.textbox.pack(padx=10, pady=6)
 
-        self.run = tk.Button(self.root, text="RUN", font=("Arial", 15), command=self.check_code)
-        self.run.pack()
+        self.run_button = tk.Button(self.root, text="▶︎", bg="white", fg="dark green" ,font=("helvetica", 15), command=self.check_code)
+        self.run_button.pack()
 
         self.root.mainloop()
         
     def run_code(self):
         mysyn.parser.parse(self.data)
         messagebox.showinfo(message=mylex.msg+'\n'+mysyn.msg)
-        # print(mylex.msg+'\n'+mysyn.msg)
 
         
 
     def check_code(self):
-        self.data = self.tb.get('1.0', tk.END)
+        self.data = self.textbox.get('1.0', tk.END)
         self.data = self.data.strip().upper()
-        if self.data == "\n":
+        if self.data == "":
             messagebox.showinfo(message="No input! Please Enter SQL code")
         elif not self.data.__contains__(";"):
             messagebox.showinfo(message="FATAL: Missing ';' at end of code")
