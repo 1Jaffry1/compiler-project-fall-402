@@ -37,11 +37,13 @@ class GUI:
         self.root.mainloop()
         
     def run_code(self):
-        mylex.line_number = 0
+        mylex.line_number = 1
         mylex.index = 0
         mylex.msg = ''
         mysyn.msg = ''
         mysyn.parser.parse(self.data)
+        if mysyn.err_cnt ==0:
+            mysyn.msg = "Code parsed successfully!"
         messagebox.showinfo(message=mylex.msg+'\n'+mysyn.msg)
 
         
