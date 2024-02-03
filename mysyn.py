@@ -10,7 +10,8 @@ erchar = -1
 
 
 def p_create_table(p):
-    '''create_table : CREATE TABLE ID LPAREN column_definitions RPAREN SEMICOLON'''
+    '''create_table : CREATE TABLE ID LPAREN column_definitions RPAREN SEMICOLON
+                    | create_table create_table'''
     # Process the CREATE TABLE command
     global msg
     msg = "Code parsed successfully!"
