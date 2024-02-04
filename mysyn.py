@@ -10,12 +10,13 @@ erline = -1
 erchar = -1
 
 
+def p_create_tables(p):
+    '''create_tables : create_table
+                     | create_tables create_table'''
+
+
 def p_create_table(p):
-    '''create_table : CREATE TABLE ID LPAREN column_definitions RPAREN SEMICOLON
-                    | create_table create_table'''
-    # Process the CREATE TABLE command
-
-
+    '''create_table : CREATE TABLE ID LPAREN column_definitions RPAREN SEMICOLON'''
 
 
 def p_column_definitions(p):
