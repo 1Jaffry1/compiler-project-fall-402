@@ -16,9 +16,11 @@ def p_create_tables(p):
 
 
 def p_create_table(p):
-    '''create_table : CREATE TABLE ID LPAREN column_definitions RPAREN SEMICOLON'''
+    '''create_table : CREATE TABLE ID REF LPAREN column_definitions RPAREN SEMICOLON'''
 
-
+def p_REF(p):
+    '''REF : REFERENCES ID
+            | empty'''
 def p_column_definitions(p):
     '''column_definitions : column_definition
                           | column_definition COMMA column_definitions'''
@@ -47,6 +49,10 @@ def p_expression_group(t):
     'expression : LPAREN expression RPAREN'
     t[0] = t[2]
 
+
+def p_empty(p):
+    'empty :'
+    pass
 
 def p_error(p):
     global msg, err_cnt
