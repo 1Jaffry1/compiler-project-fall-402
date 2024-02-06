@@ -35,6 +35,7 @@ class GUI:
         self.root.mainloop()
         
     def run_code(self):
+        mysyn.err_cnt = 0
         mylex.line_number = 1
         mylex.index = 0
         mylex.msg = ''
@@ -51,7 +52,7 @@ class GUI:
         self.data = self.data.strip().upper()
         if self.data == "":
             messagebox.showinfo(message="No input! Please Enter SQL code")
-        elif not self.data.__contains__(";"):
+        elif not self.data.endswith(";"):
             messagebox.showinfo(message="FATAL: Missing ';' at end of code")
         else:
             self.run_code()
