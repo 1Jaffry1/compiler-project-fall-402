@@ -26,33 +26,141 @@ Rule 17    empty -> <empty>
 
 Terminals, with rules where they appear
 
+ABORT                : 
+ACTION               : 
+ADD                  : 
+AFTER                : 
+ALL                  : 
+ALTER                : 
+ANALYZE              : 
+AND                  : 
+AS                   : 
+ASC                  : 
+ATTACH               : 
+AUTOINCREMENT        : 
+BEFORE               : 
+BEGIN                : 
+BETWEEN              : 
+BY                   : 
 CASCADE              : 
+CASE                 : 
+CAST                 : 
 CHECK                : 
+COLLATE              : 
+COLUMN               : 
 COMMA                : 7
+COMMIT               : 
+CONFLICT             : 
+CONSTRAINT           : 
 CREATE               : 3
+CROSS                : 
+CURRENT_DATE         : 
+CURRENT_TIME         : 
+CURRENT_TIMESTAMP    : 
+DATABASE             : 
 DATE                 : 
 DEFAULT              : 11
+DEFERRABLE           : 
+DEFERRED             : 
 DELETE               : 
+DESC                 : 
+DETACH               : 
+DISTINCT             : 
+DROP                 : 
+EACH                 : 
+ELSE                 : 
+END                  : 
 EQUAL                : 
+ESCAPE               : 
+EXCEPT               : 
+EXCLUSIVE            : 
+EXISTS               : 
+EXPLAIN              : 
+FAIL                 : 
+FOR                  : 
 FOREIGN              : 13
+FROM                 : 
+FULL                 : 
+GLOB                 : 
 GREATER              : 
+GROUP                : 
+HAVING               : 
 ID                   : 3 4 8 9 10 11 12 12 13 13 13 14
+IF                   : 
+IGNORE               : 
+IMMEDIATE            : 
 IN                   : 
+INDEX                : 
+INDEXED              : 
+INITIALLY            : 
+INNER                : 
+INSERT               : 
+INSTEAD              : 
+INTERSECT            : 
+INTO                 : 
+IS                   : 
+ISNULL               : 
+JOIN                 : 
 KEY                  : 10 13
+LEFT                 : 
+LIKE                 : 
+LIMIT                : 
 LPAREN               : 3 13 13 16
+MATCH                : 
+NATURAL              : 
+NO                   : 
+NOT                  : 
+NOTNULL              : 
 NULL                 : 9
 NUMBER               : 15
+OF                   : 
+OFFSET               : 
 ON                   : 
+OR                   : 
+ORDER                : 
+OUTER                : 
+PLAN                 : 
+PRAGMA               : 
 PRIMARY              : 10
+QUERY                : 
+RAISE                : 
+RECURSIVE            : 
 REFERENCES           : 4 12 13
+REGEXP               : 
+REINDEX              : 
+RELEASE              : 
+RENAME               : 
+REPLACE              : 
+RESTRICT             : 
+RIGHT                : 
+ROLLBACK             : 
+ROW                  : 
 RPAREN               : 3 13 13 16
+SAVEPOINT            : 
+SELECT               : 
 SEMICOLON            : 3
 SET                  : 
 TABLE                : 3
+TEMP                 : 
+TEMPORARY            : 
+THEN                 : 
 TIME                 : 
+TO                   : 
+TRANSACTION          : 
+TRIGGER              : 
 TYPE                 : 8 9 10 11 12
+UNION                : 
 UNIQUE               : 
 UPDATE               : 
+USING                : 
+VACUUM               : 
+VALUES               : 
+VIEW                 : 
+VIRTUAL              : 
+WHEN                 : 
+WHERE                : 
+WITH                 : 
+WITHOUT              : 
 error                : 
 
 Nonterminals, with rules where they appear
